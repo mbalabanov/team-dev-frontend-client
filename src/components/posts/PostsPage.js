@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PostForm from './PostForm';
 import client from '../../utils/client';
 import './style.css';
+import SideNavBar from '../sideNavBar/sideNavBar';
 
 import Header from '../Header/Header';
 
@@ -44,20 +45,23 @@ const PostsPage = () => {
   return (
     <>
       <Header companyName={`Cohort Manager 2.0`} />
-      <section className='posts-section'>
-        <button id='user-signout-button' onClick={signOut}>
-          sign out
-        </button>
-        <p>Status: {postResponse.status}</p>
-        <PostForm handleSubmit={createPost} handleChange={handleChange} />
-        <ul className='posts-list'>
-          {posts.map((post, index) => (
-            <li key={index} className='post-item'>
-              {post.content}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <div className='mainGridArea'>
+        <SideNavBar />
+          <section className='posts-section main-col' >
+            {/* <button id='user-signout-button' onClick={signOut}>
+              sign out
+            </button> */}
+            <p>Status: {postResponse.status}</p>
+            <PostForm handleSubmit={createPost} handleChange={handleChange} />
+            <ul className='posts-list'>
+              {posts.map((post, index) => (
+                <li key={index} className='post-item'>
+                  {post.content}
+                </li>
+              ))}
+            </ul>
+          </section>
+      </div>
     </>
   );
 };

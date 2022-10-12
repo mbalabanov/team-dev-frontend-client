@@ -30,7 +30,7 @@ const RegistrationPage = () => {
     <div className="registration-page">
       <Link id="user-registration-link" to="/signup">sign up</Link> <Link id="user-login-link" to="/">login</Link>
       <h1>Sign up</h1>
-      <p>Status: {registerResponse.status}</p>
+      <span>Status: {registerResponse.status}</span>
       <UserForm handleChange={handleChange} handleSubmit={registerUser} />
     </div>
   )

@@ -49,7 +49,7 @@ const LoginPage = () => {
         login
       </Link>
       <h1>Login</h1>
-      <p>Status: {loginResponse.status}</p>
+      <span>Status: {loginResponse.status}</span>
       <UserForm handleChange={handleChange} handleSubmit={loginUser} />
     </div>
   );
